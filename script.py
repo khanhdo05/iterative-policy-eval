@@ -39,15 +39,14 @@ def outOfBounds(r, c):
 def iterPolicyEval(
     grid,
     policy,
-    threshold=1e-10,
-    iter = 10
+    threshold=1e-10
 ) :
     k = 1
     while True:
         delta = 0
         grid_copy = copy.deepcopy(grid)
         new_grid = copy.deepcopy(grid)
-        print("k: ", k)
+        print("k =", k)
         for r in range(ROWS):
             for c in range(COLS):
                 if (r, c) == (0, 0) or (r, c) == (3, 3):
@@ -69,7 +68,7 @@ def iterPolicyEval(
         grid = new_grid
         print_grid(grid)
         print("\n")
-        if delta < threshold or k == iter:
+        if delta < threshold:
             break
         k += 1
         
