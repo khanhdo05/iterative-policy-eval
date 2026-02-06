@@ -69,7 +69,7 @@ def iterPolicyEval(
         grid = new_grid
         print_grid(grid)
         print("\n")
-        if delta < threshold or k == 10:
+        if delta < threshold or k == iter:
             break
         k += 1
         
