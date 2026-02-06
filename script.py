@@ -53,7 +53,7 @@ def iterPolicyEval(
                 if (r, c) == (0, 0) or (r, c) == (3, 3):
                     continue
                 
-                v = grid[r][c]
+                v = 0
                 
                 for dir in [(-1, 0), (1, 0), (0, -1), (0, 1)]:
                     new_r = r + dir[0]
@@ -64,7 +64,7 @@ def iterPolicyEval(
                         v += 0.25 * (-1 + 1 * grid_copy[new_r][new_c])
                 
                 new_grid[r][c] = v
-                delta = max(delta, abs(v - grid[r][c]))
+                delta = max(delta, abs(v - grid_copy[r][c]))
                 
         grid = new_grid
         print_grid(grid)
