@@ -39,7 +39,7 @@ class GridWorld:
         return self.grid.grid
 
     def state_value(self, reward, discount, grid, r, c):
-        return (1./self.size) * (reward + discount * grid[r][c])
+        return 0.25 * (reward + discount * grid[r][c])
     
     def render(self, k):
         print("k =", k)
